@@ -7,6 +7,7 @@
     "@babel/core": "^7.2.0",
     "@babel/preset-env": "^7.2.0",
     "babel-loader": "^8.0.4",
+    "babel-plugin-transform-remove-strict-mode": "0.0.2",
     "css-loader": "^2.0.0",
     "hybrids": "^1.5.0",
     "raw-loader": "^0.5.1",
@@ -14,7 +15,11 @@
     "webpack": "^4.27.1",
     "webpack-cli": "^3.1.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.2.0",
+    "@babel/plugin-transform-strict-mode": "^7.2.0",
+    "babel-plugin-transform-strict-mode": "^6.24.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

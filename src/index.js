@@ -5,7 +5,7 @@ import {
   render
 } from 'hybrids';
 import Cymine from "@intermine/cytoscape-intermine";
-import styles from './style.css'; 
+import styles from './style.css';
 
 const styleElement = {
   render: html([`<style>${styles}</style`])
@@ -32,7 +32,7 @@ export const BiojsTest = {
       compact: true //optional. Only relevant for error messages. Displays compact 1.5 em 'no results found' message rather than taking up the normal amount of space.
     });
     return html `<div>
-    Loading...
+    <style-element />
     </div>`
   }, {
     shadowRoot: false

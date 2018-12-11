@@ -8,7 +8,13 @@ module.exports = {
       use: {
         loader: 'babel-loader',
         options: {
-          presets: ['@babel/preset-env']
+          plugins: ['@babel/plugin-transform-modules-commonjs', ["@babel/plugin-transform-strict-mode", {
+            strictMode: false
+          }]],
+          presets: [
+            ['@babel/preset-env'],
+
+          ]
         }
       },
 
@@ -17,7 +23,7 @@ module.exports = {
       use: [{
         loader: 'raw-loader'
       }],
-    },{
+    }, {
       test: /\.css$/,
       use: ['css-loader'],
     }]
