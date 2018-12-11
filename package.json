@@ -4,6 +4,8 @@
   "description": "run `npx webpack`",
   "main": "webpack.config.js",
   "dependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^2.0.0",
     "hybrids": "^1.5.0",
