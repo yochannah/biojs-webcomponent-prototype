@@ -21,22 +21,21 @@ const styleElement = {
 * paired with a `define` method call - see end of the page.
 **/
 export const BiojsComponentInteractionGraph = {
-  render: render(function(x) {
+  //the `host` argument is a reference to the html returned at the bottom of
+  //this function - you'll probably want to update or add content to host.
+  render: render(function(host) {
+    //Cymine is a function provided by the cytoscape-intermine library dependency
     Cymine({
-      //optional. Will default to '#cymine' if not specified:
-      parentElem: x,
-      //required. can't query without this! :) must be a valid
-      //intermine API URL
+      parentElem: host,
       service: {
-        root: 'http://www.flymine.org/flymine/service/'
+        root: host.getAttribute("intermineService")
       },
-      //required. needs value : "whatever", optionally extraValue : "whatever".
       queryOn: {
-        "value": "zen",
-        "extraValue": "D. melanogaster"
+        "value": host.getAttribute("searchTerm"),
+        "extraValue": host.getAttribute("searchOrganism")
       },
-      nodeType: "Gene", //valid options are Gene or Protein. Optional, will default to Gene.
-      compact: true //optional. Only relevant for error messages. Displays compact 1.5 em 'no results found' message rather than taking up the normal amount of space.
+      nodeType: host.getAttribute("searchClass"),
+      compact: true
     });
     /**
     *   It's okay to change the HTML to anything that suits you,
@@ -51,5 +50,5 @@ export const BiojsComponentInteractionGraph = {
   })
 }
 
-define('biojs-component-test', BiojsComponentInteractionGraph);
+define('biojs-component-interaction-graph', BiojsComponentInteractionGraph);
 define('style-element', styleElement);

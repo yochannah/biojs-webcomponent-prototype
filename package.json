@@ -1,7 +1,7 @@
 {
-  "name": "test-webcomponent",
+  "name": "biojs-vis-component-interaction-viewer",
   "version": "1.0.0",
-  "description": "run `npx webpack`",
+  "description": "Visualise Gene and Protein interaction networks. ",
   "main": "webpack.config.js",
   "dependencies": {
     "@babel/core": "^7.2.0",
@@ -28,9 +28,9 @@
     "type": "git",
     "url": "git+https://github.com/yochannah/biojs-webcomponent-prototype.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["biojs", "biojs-webcomponent"],
+  "author": "Yo Yehudi",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/yochannah/biojs-webcomponent-prototype/issues"
   },
