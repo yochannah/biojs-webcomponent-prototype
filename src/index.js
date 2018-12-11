@@ -13,7 +13,7 @@ const styleElement = {
 
 
 
-export const BiojsTest = {
+export const BiojsComponentInteractionGraph = {
   render: render(function(x) {
     Cymine({
       //optional. Will default to '#cymine' if not specified:
@@ -39,5 +39,5 @@ export const BiojsTest = {
   })
 }
 
-define('biojs-component-test', BiojsTest);
+define('biojs-component-test', BiojsComponentInteractionGraph);
 define('style-element', styleElement);

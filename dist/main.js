@@ -32827,7 +32827,7 @@ function toComment(sourceMap) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.BiojsTest = void 0;
+exports.BiojsComponentInteractionGraph = void 0;
 
 __webpack_require__(45);
 
@@ -32854,7 +32854,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 var styleElement = {
   render: (0, _hybrids.html)(["<style>".concat(_style.default, "</style")])
 };
-var BiojsTest = {
+var BiojsComponentInteractionGraph = {
   render: (0, _hybrids.render)(function (x) {
     (0, _cytoscapeIntermine.default)({
       //optional. Will default to '#cymine' if not specified:
@@ -32879,8 +32879,8 @@ var BiojsTest = {
     shadowRoot: false
   })
 };
-exports.BiojsTest = BiojsTest;
-(0, _hybrids.define)('biojs-component-test', BiojsTest);
+exports.BiojsComponentInteractionGraph = BiojsComponentInteractionGraph;
+(0, _hybrids.define)('biojs-component-test', BiojsComponentInteractionGraph);
 (0, _hybrids.define)('style-element', styleElement);
 
 /***/ }),
