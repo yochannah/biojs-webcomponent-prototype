@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>BioJS webcomponent demo</title>
-    <!-- the library for the webcomponent -->
-    <script src="dist/main.js" type="module"></script>
-    <!-- imjs is the library that loads data from intermine -->
-    <script src="http://cdn.intermine.org/js/intermine/imjs/3.15.0/im.min.js" charset="UTF-8"></script>
-  </head>
-  <body>
-    <!--
+
+<head>
+  <meta charset="utf-8">
+  <title>BioJS webcomponent demo</title>
+  <!-- the library for the webcomponent -->
+  <script src="dist/main.js" type="module"></script>
+  <!-- imjs is the library that loads data from intermine -->
+  <script src="https://cdn.jsdelivr.net/npm/imjs@3.16.0/dist/im.min.js" integrity="sha256-3AAhWzHG0O3IsZX4BdxL63L30NN3Kjn6c2YhONE8mHs=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!--
     Some notes on usage:
     -
     `intermineService` value must point to the webservices
@@ -24,6 +26,7 @@
     -
     `searchClass` - choose either Gene or Protein. (Case matters)
     -->
-    <biojs-component-interaction-graph intermineService="http://www.flymine.org/flymine/service/" searchTerm="zen" searchClass="Gene" searchOrganism="D. melanogaster"></biojs-component-interaction-graph>
-  </body>
+  <biojs-component-interaction-graph intermineService="http://www.flymine.org/flymine/service/" searchTerm="zen" searchClass="Gene" searchOrganism="D. melanogaster"></biojs-component-interaction-graph>
+</body>
+
 </html>
