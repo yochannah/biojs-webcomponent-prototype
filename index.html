@@ -26,7 +26,16 @@
     -
     `searchClass` - choose either Gene or Protein. (Case matters)
     -->
-  <biojs-component-interaction-graph intermineService="http://www.flymine.org/flymine/service/" searchTerm="zen" searchClass="Gene" searchOrganism="D. melanogaster"></biojs-component-interaction-graph>
+
+  <biojs-component-interaction-graph intermineService="https://yeastmine.yeastgenome.org/yeastmine/service" searchTerm="YGR067C" searchClass="Gene" searchOrganism="S. cerevisiae"></biojs-component-interaction-graph>
+
+
+<!--
+This example doesn't work on gh-pages since flymine isn't http and gh-pages is.
+<biojs-component-interaction-graph intermineService="http://www.flymine.org/flymine/service/" searchTerm="zen" searchClass="Gene" searchOrganism="D. melanogaster"></biojs-component-interaction-graph>
+-->
+
+
 </body>
 
 </html>
