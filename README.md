@@ -58,3 +58,7 @@ In your terminal, run
 ```bash
 npx webpack
 ```
+
+### Developer notes
+
+This uses [hybrids.js](https://github.com/hybridsjs/hybrids) to implement webcomponents easily.
