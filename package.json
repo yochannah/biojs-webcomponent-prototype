@@ -1,0 +1,30 @@
+{
+  "name": "test-webcomponent",
+  "version": "1.0.0",
+  "description": "run `npx webpack`",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "babel-loader": "^8.0.4",
+    "css-loader": "^2.0.0",
+    "hybrids": "^1.5.0",
+    "raw-loader": "^0.5.1",
+    "underscore": "^1.9.1",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yochannah/biojs-webcomponent-prototype.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yochannah/biojs-webcomponent-prototype/issues"
+  },
+  "homepage": "https://github.com/yochannah/biojs-webcomponent-prototype#readme"
+}

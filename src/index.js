@@ -5,7 +5,7 @@ import {
   render
 } from 'hybrids';
 import Cymine from "@intermine/cytoscape-intermine";
-import styles from './style.css';
+import styles from './style.css'; 
 
 const styleElement = {
   render: html([`<style>${styles}</style`])
