@@ -50,7 +50,7 @@ export const BiojsComponentInteractionGraph = {
     return html `<div>
     <style-element />
     </div>`
-  })
+  }, {shadowRoot:false})
 }
 
 define('biojs-component-interaction-graph', BiojsComponentInteractionGraph);
