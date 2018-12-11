@@ -1,5 +1,1 @@
-@import 'node_modules/@intermine/cytoscape-intermine/dist/style.css'
-
-
-
-body {color:purple}
+@import '../node_modules/@intermine/cytoscape-intermine/dist/style.css';
