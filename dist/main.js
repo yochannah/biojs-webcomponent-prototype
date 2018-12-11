@@ -32851,9 +32851,19 @@ function _templateObject() {
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
+/**
+* We directly insert a style element in order to embed styles.
+* See https://github.com/hybridsjs/hybrids/issues/10#issuecomment-418340724
+**/
 var styleElement = {
   render: (0, _hybrids.html)(["<style>".concat(_style.default, "</style")])
 };
+/**
+* This is where we place the bulk of the code, wrapping an existing BioJS component
+* or where we might initialise a component written from scratch. Needs to be
+* paired with a `define` method call - see end of the page.
+**/
+
 var BiojsComponentInteractionGraph = {
   render: (0, _hybrids.render)(function (x) {
     (0, _cytoscapeIntermine.default)({
@@ -32874,6 +32884,12 @@ var BiojsComponentInteractionGraph = {
       compact: true //optional. Only relevant for error messages. Displays compact 1.5 em 'no results found' message rather than taking up the normal amount of space.
 
     });
+    /**
+    *   It's okay to change the HTML to anything that suits you,
+    *   but leave <style-element> here if your
+    *   component has its own styles.
+    **/
+
     return (0, _hybrids.html)(_templateObject());
   }, {
     shadowRoot: false
