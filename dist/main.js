@@ -31957,10 +31957,11 @@ function Cymine(args) {
   }
 
   function validateServiceRoot() {
-    console.log("ddd");
+    console.log("ddd", graph);
 
     try {
       if (graph.service) {
+        console.log("gi");
         return new imjs.Service({
           token: graph.service.token,
           root: graph.service.root,
@@ -31970,7 +31971,7 @@ function Cymine(args) {
         throw new initError('noServiceUrl');
       }
     } catch (e) {
-      console.error("'sbroke'");
+      console.error("'sbroke'", e);
     }
   }
 
