@@ -31957,16 +31957,14 @@ function Cymine(args) {
   }
 
   function validateServiceRoot() {
-    console.log("ddd", graph);
-
     try {
       if (graph.service) {
-        console.log("gi");
-        return new imjs.Service({
+        var serviceRoot = new imjs.Service({
           token: graph.service.token,
           root: graph.service.root,
           errorHandler: badServiceError
         });
+        return serviceRoot;
       } else {
         throw new initError('noServiceUrl');
       }
@@ -32016,11 +32014,9 @@ function Cymine(args) {
       if (validateParent()) {
         //add the elements to the page
         ui = new cymineDisplay(graph);
-        console.log("FFFRRRRTTRTRTRRTRTR");
         ui.init(); //check that the service and query looks ok, or error if not.
 
-        mine = validateServiceRoot();
-        console.log("4");
+        var mine = validateServiceRoot();
 
         if (prepQuery() && mine) {
           //get the data from the mine
@@ -37184,7 +37180,6 @@ var ui = function ui(graph) {
     };
   },
       init = function init() {
-    console.log("FFF");
     graph.parentElem.innerHTML = getTemplate('cymineHtml');
     util.addClass(graph.parentElem, "cymine"); //init useful elements and store in master settings object
 
@@ -37192,11 +37187,9 @@ var ui = function ui(graph) {
     graph.targetElem = graph.parentElem.querySelector('.cy'); //make the graph as wide as can be. can't be auto as cytoscape needs a width
 
     graph.targetElem.style.width = graph.parentElem.querySelector('.graph').clientWidth + "px";
-    console.log("%c--------->graph.compact", "color:seagreen;font-weight:bold;", graph.compact, graph);
+    console.log("%cgraph.compact", "color:seagreen;font-weight:bold;", graph.compact, graph);
   },
       initGraph = function initGraph() {
-    console.log("de");
-
     try {
       var interactionControls = controls();
       interactionControls.listen(); //make the graph
