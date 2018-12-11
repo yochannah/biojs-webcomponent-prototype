@@ -1,5 +1,5 @@
 {
-  "name": "biojs-vis-component-interaction-viewer",
+  "name": "@intermine/biojs-vis-component-interaction-viewer",
   "version": "1.0.0",
   "description": "Visualise Gene and Protein interaction networks. ",
   "main": "webpack.config.js",
