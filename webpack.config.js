@@ -28,8 +28,5 @@ module.exports = {
       use: ['css-loader'],
     }]
 
-  },
-  optimization: {
-    minimize: false
-  },
+  }
 }
