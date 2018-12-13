@@ -32837,23 +32837,31 @@ var _style = _interopRequireDefault(__webpack_require__(108));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _templateObject() {
-  var data = _taggedTemplateLiteral(["", ""]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
-function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
-
 /**
  * We directly insert a style element in order to embed styles.
- * See https://github.com/hybridsjs/hybrids/issues/10#issuecomment-418340724
  **/
-var styleTemplate = (0, _hybrids.html)(["<style id=\"cytoscapeInterMineStyle\">".concat(_style.default, "</style")]);
+function styleTemplate() {
+  var myStyle = document.createElement("style");
+  myStyle.setAttribute("id", "cytoscapeInterMineStyle");
+  myStyle.setAttribute("type", "text/css");
+  myStyle.innerHTML = _style.default.toString();
+  return myStyle;
+}
+/**
+ * Check if there is already a style element for this component and add if not.
+ * Useful in cases where this component might be initialised more than once.
+ **/
+
+
+function addStylesIfNeeded() {
+  if (!document.getElementById("cytoscapeInterMineStyle")) {
+    document.head.appendChild(styleTemplate());
+  }
+}
+/**
+ * initialises an existing library, called inside the web component wrapper.
+ **/
+
 
 function connectCymine(options) {
   //Cymine is a function provided by the cytoscape-intermine library dependency
@@ -32880,24 +32888,21 @@ function connectCymine(options) {
         compact: true,
         parentElem: host
       });
-
-      if (!document.getElementById("cytoscapeInterMineStyle")) {
-        console.log(document.getElementsByTagName("head"));
-        document.getElementsByTagName("head")[0].appendChild((0, _hybrids.html)(_templateObject(), styleTemplate));
-      }
+      addStylesIfNeeded();
     }
   };
 }
-
-var BiojsComponentInteractionGraph = {
-  cymine: connectCymine() // your styles should be applied globaly to the document once, so render is not required
-
-};
 /**
  * This is where we place the bulk of the code, wrapping an existing BioJS component
  * or where we might initialise a component written from scratch. Needs to be
  * paired with a `define` method call - see end of the page.
  **/
+
+
+var BiojsComponentInteractionGraph = {
+  cymine: connectCymine()
+}; // this line connects the html element in idex.html with the javascript
+// defined above.
 
 exports.BiojsComponentInteractionGraph = BiojsComponentInteractionGraph;
 (0, _hybrids.define)('biojs-component-interaction-graph', BiojsComponentInteractionGraph);
