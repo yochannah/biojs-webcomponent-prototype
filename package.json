@@ -1,6 +1,6 @@
 {
   "name": "@intermine/biojs-vis-component-interaction-viewer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Visualise Gene and Protein interaction networks. ",
   "main": "webpack.config.js",
   "dependencies": {
@@ -40,7 +40,11 @@
   },
   "homepage": "https://github.com/yochannah/biojs-webcomponent-prototype#readme",
   "sniper": {
-  "buildJS": ["/dist/main.js"],
-  "buildCSS": ["/src/style.css"]
-}
+    "buildJS": [
+      "/dist/main.js"
+    ],
+    "buildCSS": [
+      "/src/style.css"
+    ]
+  }
 }
